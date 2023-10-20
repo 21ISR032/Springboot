@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:thymeleaf.org">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registration</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <style>
+            *
+            {
+                margin: 0;
+                padding: 0;
+            }
+            body
+            {
+                background-image: url(bg.jpg);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+            }
+            .main
+            {
+                margin-left: 350px;
+                max-width: 600px;
+                width: 600px;
+                background-color: rgb(209, 225, 241);
+                padding: 0px 30px;
+                border-radius: 5px;
+                backdrop-filter: blur(10px); 
+            }
+            .main .register
+            {
+                font-size: 8px;
+                font-weight: 600px;
+            }
+            .register h1
+            {
+                text-align: center;
+                color: rgb(20, 110, 20);
+                font-size: 30px;
+            }
+            .register 
+            {
+                display: block;
+                backdrop-filter: blur(10px); 
+            }
+            .input input
+            {
+                width:500px;
+                font-size: 1.2em;
+            }
+            button
+            {
+                background-color: rgb(42, 165, 93);
+                font-size: 20px;
+                color: black;
+                margin: 10px;
+                padding: 10px 25px;
+                border-radius: 8px;
+                border: 1px solid #889899;
+                size: 15px;
+                width:150px;
+                height:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="register">
+                <h1>Order your product</h1><br> <br> <br>
+                <form th:action="@{/user_save}" th:method="post" th:object="${user}">
+                    <div class="form-group row">
+                        <font size="3">ID</font> &nbsp; &nbsp;
+                        <div class="col-sm-7"><input name="id" class="form-control" type="text" th:field="*{id}" />
+                    </div>
+                    <div class="form-group row">
+                    <font size="3">Name</font> &nbsp; &nbsp;
+                    
+                    <div class="col-sm-7"><input name="name" class="form-control" type="text" th:field="*{name}" ></div>
+                    </div> <br>
+                    <div class="form-group row">
+                        <font size="3">Email</font> &nbsp; &nbsp;
+                        <div class="col-sm-7"><input class="form-control" name="email" type="text" th:field="*{email}" ><br></div>
+                    </div>
+                    <div class="form-group row">
+                      <font size="3">Address</font> &nbsp; &nbsp;
+                      <div class="col-sm-7"><input class="form-control" name="address" type="text" th:field="*{address}" ><br></div>
+                  </div>
+                    <div class="form-group row">
+                      <font size="3">Product Name</font> 
+                      <div class="col-sm-7"><input class="form-control" type="text" name="product" th:field="*{product}"></div>
+                  </div><br>
+                  <div class="form-group row">
+                    <font size="3">Price</font> 
+                    <div class="col-sm-7"><input class="form-control" type="number" name="price" th:field="*{price}"></div>
+                </div><br>
+                <div class="form-group row">
+                  <font size="3">Quantity</font> 
+                  <div class="col-sm-7"><input class="form-control" type="text" name="quantity" th:field="*{quantity}"></div>
+              </div><br>
+                        <input type="submit" class="btn btn-success" value="Add User">
+                        <a class="btn btn-success" th:href="@{'delete/user'+ ${user.id}}">Delete User</a> 
+                        <a class="btn btn-success" th:href="@{'update/user'+ ${user.id}}">Update User</a>
+                        <div>
+                        
+                </form>
+                
+            </div>
+        </div>
+        
+    </body>

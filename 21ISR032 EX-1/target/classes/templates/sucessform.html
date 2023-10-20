@@ -1,0 +1,23 @@
+<html xmlns:th="http:wwww.thymeleaf.org">
+    <head>
+        <title>Sucess page</title>
+        </head>
+    <body>
+        <div class="container">
+            <div class="content">
+              <h1>Thank you for your order!</h1>
+              <p>Your order has been successfully placed.</p>
+              <p>An email confirmation has been sent to your registered email address.</p>
+                    
+        Name: <span th:text="${frm.name}"></span><br><br>
+        Password: <span th:text="${frm.password}"></span><br><br>
+         Email: <span th:text="${frm.email}"></span><br><br>
+        Phone: <span th:text="${frm.phno}"></span><br><br>
+        Dob: <span th:text="${frm.dob}"></span><br><br>
+        Mode of Payment: <span th:text="${frm.mode}"></span><br><br>
+       Location: <span th:text="${frm.location}"></span><br><br> 
+         Feedback: <span th:text="${frm.fb}"></span><br><br>           
+    </div>
+</div>
+    </body>
+</html>
