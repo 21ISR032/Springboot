@@ -1,0 +1,11 @@
+<html xmlns:th="http:www.thymLeaf.org">
+    <head>
+        <title>Registration form</title>
+    </head>
+<body>
+    <form th:action="@{/registersucc}" method="post" th:object="$(frm)">
+        Name:<input type="text" th:field="*{name}"/><br>
+        <button type="submit">Registration</button>
+    </form>
+</body>
+</html>

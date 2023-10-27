@@ -1,0 +1,69 @@
+<html xmlns:th="http:wwww.thymeleaf.org">
+    <head>
+        <title>Register</title>
+        <style>
+            body {
+    background-image: url('bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .form-group {
+    margin-bottom: 20px;
+    
+  }
+  .form-group label {
+    display: block;
+    font-weight: bold;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .form-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 17px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <h1>Login Form</h1>
+    <form action="@{/sucess}" method="post" th:object="${frm}">
+        Name:<br> <input type="text" th:field="*{name}"><br><br>
+        Password:<br> <input type="password" th:field="*{password}"><br><br>
+         Email:<br> <input type="text" th:field="*{email}"><br><br>
+        DOB: <br> <input type="date" th:field="*{dob}"><br><br> 
+        phno: <br><input type="number" th:field="*{phno}"><br><br>
+        Address: <br><input type="text" th:field="*{address}"><br><br>
+        Location:<br><input list="loc" th:field="*{location}">
+         <datalist id="loc">         
+              <option value="Kunnathur"></option>
+              <option value="Getticheviyur"></option>
+              <option value="Nambiyur"></option>
+              <option value="Kolapalur"></option>
+              <option value="Gobi"></option>
+              <option value="Erode"></option>
+          </datalist><br> 
+         Mode of Payment:<br><input type="radio" th:field="*{mode}" value="online">Online
+          <input type="radio" th:field="*{mode}" value="offline">Offline<br><br>
+        Feedback:<br> <textarea th:field="*{fb}"cols="20" rows="5"></textarea><br><br>
+        <a href="sucessform.html">Register</a>
+        <!-- <button>Register</button></a> -->
+    </form>
+</div>
+</body>
+</html>

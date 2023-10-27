@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Sucess page</title>
+        <style>
+            body {
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  }
+  .container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-content: center;
+  }
+  h1 {
+    text-align: center;
+    color: black;
+  } 
+  .content {
+    text-align: center;
+  }
+  .order-id {
+    font-weight: bold;
+  }
+  .container {
+    border: 1px solid #ccc;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+              <h1>Thank you for your order!</h1>
+              <p>Your order has been successfully placed.</p>
+              <p>An email confirmation has been sent to your registered email address.</p>                    
+        Name: <span th:text="${frm.name}"></span><br><br>
+        Password: <span th:text="${frm.Password}"></span><br><br>
+         Email: <span th:text="${frm.email}"></span><br><br>
+        Phone: <span th:text="${frm.phno}"></span><br><br>
+        Dob: <span th:text="${frm.dob}"></span><br><br>
+        Address:  <span th:text="${frm.address}"></span><br><br>
+        Mode of Payment: <span th:text="${frm.mode}"></span><br><br>
+       Location: <span th:text="${frm.location}"></span><br><br> 
+         <!-- Order ID: <span class="${frm.order-id}">ABC123XYZ</span><br><br>  -->
+         Feedback: <span th:text="${frm.fb}"></span><br><br>           
+    </div>
+</div>
+    </body>
+</html>
